@@ -1,0 +1,4 @@
+version: 1
+start:
+  command: ["uv", "run", "analyze_server_live_http.py"]
+  port: 8000
