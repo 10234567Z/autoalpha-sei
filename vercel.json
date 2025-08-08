@@ -1,0 +1,22 @@
+{
+  "_comment": "Vercel deployment configuration (serverless functions)",
+  "version": 2,
+  "builds": [
+    {
+      "src": "mcp-agents/mcp/server/analyze_server_http.py",
+      "use": "@vercel/python",
+      "config": {
+        "runtime": "python3.13"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/mcp-agents/mcp/server/analyze_server_http.py"
+    }
+  ],
+  "env": {
+    "PYTHON_VERSION": "3.13"
+  }
+}
